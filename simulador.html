@@ -35,11 +35,13 @@
 
     <h2>Datos Financieros</h2>
 
-    <label>Ingresos</label>
+    <label for="txtIngresos">Ingresos</label>
     <input type="text" id="txtIngresos">
+    <small id="error_txtIngresos" class="error"></small>
 
-    <label>Egresos</label>
+    <label for="txtEgresos">Egresos</label>
     <input type="text" id="txtEgresos">
+    <small id="error_txtEgresos" class="error"></small>
 
     <div class="resultado">
         <span>Disponible</span>
@@ -55,14 +57,17 @@
 
     <h2>Solicitud de Crédito</h2>
 
-    <label>Monto solicitado</label>
+    <label for="txtMonto">Monto solicitado</label>
     <input type="text" id="txtMonto">
+    <small id="error_txtMonto" class="error"></small>
 
-    <label>Plazo (años)</label>
+    <label for="txtPlazo">Plazo (años)</label>
     <input type="text" id="txtPlazo">
+    <small id="error_txtPlazo" class="error"></small>
 
-    <label>Tasa de interés (%)</label>
+    <label for="txtTasaInteres">Tasa de interés (%)</label>
     <input type="text" id="txtTasaInteres">
+    <small id="error_txtTasaInteres" class="error"></small>
 
     <div class="resultado">
         <span>Interés</span>
@@ -80,11 +85,7 @@
     </div>
 
     <div class="estado">
-
-        <h3 id="spnEstadoCredito">
-            ANALIZANDO...
-        </h3>
-
+        <h3 id="spnEstadoCredito">ANALIZANDO...</h3>
     </div>
 
     <div class="buttons">

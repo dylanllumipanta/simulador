@@ -317,4 +317,16 @@ hr{
 
     }
 
+
+
+}
+
+.error{
+display:block;
+color:#dc2626;
+font-size:13px;
+font-weight:500;
+min-height:18px;
+margin-top:4px;
+margin-bottom:12px;
 }

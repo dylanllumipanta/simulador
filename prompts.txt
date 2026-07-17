@@ -9,3 +9,15 @@
 5. Agrega animaciones suaves en los botones y campos de entrada.
 
 6. Mantén separados los archivos HTML, CSS y JavaScript sin modificar la logica.
+
+actua como diseñador web y agrega las validaciones que consideres necesarias, por ejemplo:
+
+1. ingresa un monto
+
+2. ingresa plazo
+
+3. ingresa taza
+
+4. ingresa solo numeros
+
+5. asegurate de que el mensaje tenga un estilo unico
