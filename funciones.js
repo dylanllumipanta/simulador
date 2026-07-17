@@ -28,3 +28,4 @@ function calcularCuotaMensual(total, plazoAnios) {
 function aprobarCredito(capacidadPago, cuotaMensual) {
     return capacidadPago > cuotaMensual;
 }
+

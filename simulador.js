@@ -1,31 +1,64 @@
 function calcular() {
-    let ingresos = parseFloat(recuperarFloat("txtIngresos"));
-    let egresos = parseFloat(recuperarFloat("txtEgresos"));
+
+    // Datos financieros
+    let ingresos = parseFloat(document.getElementById("txtIngresos").value);
+    let egresos = parseFloat(document.getElementById("txtEgresos").value);
 
     let disponible = calcularDisponible(ingresos, egresos);
-    mostrarTexto("lblDisponibleValor", disponible.toFixed(2));
+    document.getElementById("spnDisponible").textContent =
+        "$ " + disponible.toFixed(2);
 
-    let capacidad = calcularCapacidadPago(disponible);
-    mostrarTexto("lblCapacidadValor", capacidad.toFixed(2));
+    let capacidadPago = calcularCapacidadPago(disponible);
+    document.getElementById("spnCapacidadPago").textContent =
+        "$ " + capacidadPago.toFixed(2);
 
-    let monto = parseInt(recuperarInt("txtMonto"));
-    let plazo = parseInt(recuperarInt("txtPlazo"));
-    let tasa = parseInt(recuperarInt("txtTasa"));
+    let monto = parseFloat(document.getElementById("txtMonto").value);
+    let plazo = parseInt(document.getElementById("txtPlazo").value);
+    let tasa = parseFloat(document.getElementById("txtTasaInteres").value);
 
     let interes = calcularInteresSimple(monto, tasa, plazo);
-    mostrarTexto("lblInteresValor", interes.toFixed(2));
+    document.getElementById("spnInteresPagar").textContent =
+        "$ " + interes.toFixed(2);
 
     let total = calcularTotalPagar(monto, interes);
-    mostrarTexto("lblTotalValor", total.toFixed(2));
+    document.getElementById("spnTotalPrestamo").textContent =
+        "$ " + total.toFixed(2);
 
     let cuota = calcularCuotaMensual(total, plazo);
-    mostrarTexto("lblCuotaValor", cuota.toFixed(2));
+    document.getElementById("spnCuotaMensual").textContent =
+        "$ " + cuota.toFixed(2);
 
-    let aprobado = aprobarCredito(capacidad, cuota);
+    let aprobado = aprobarCredito(capacidadPago, cuota);
 
     if (aprobado) {
-        mostrarTexto("lblResultado", "CRÉDITO APROBADO");
+        document.getElementById("spnEstadoCredito").textContent =
+            "CRÉDITO APROBADO";
     } else {
-        mostrarTexto("lblResultado", "CRÉDITO RECHAZADO");
+        document.getElementById("spnEstadoCredito").textContent =
+            "CRÉDITO RECHAZADO";
     }
 }
+
+function reiniciar(){
+
+    document.getElementById("txtIngresos").value = "";
+    document.getElementById("txtEgresos").value = "";
+    document.getElementById("txtMonto").value = "";
+    document.getElementById("txtPlazo").value = "";
+    document.getElementById("txtTasaInteres").value = "";
+
+    document.getElementById("spnDisponible").textContent = "";
+    document.getElementById("spnCapacidadPago").textContent = "";
+    document.getElementById("spnInteresPagar").textContent = "";
+    document.getElementById("spnTotalPrestamo").textContent = "";
+    document.getElementById("spnCuotaMensual").textContent = "";
+    document.getElementById("spnEstadoCredito").textContent = "ANALIZANDO...";
+}
+
+window.onload = function () {
+
+    document.getElementById("btnCalcularCredito").addEventListener("click", calcular);
+
+    document.getElementById("btnReiniciar").addEventListener("click", reiniciar);
+
+};
