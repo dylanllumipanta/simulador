@@ -1,0 +1,11 @@
+1. Mejora el diseño visual de este simulador de crédito con un estilo empresarial moderno usando HTML y CSS. Manten todos los ids existentes.
+
+2. Haz que la pagina sea responsive para moviles y computadoras utilizando solo css y html.
+
+3. Agrega una tarjeta blanca con sombra, colores azul oscuro y dorado y una tipografia vistosa.
+
+4. Diseña un encabezado con el logo de un banco ficticio llamado Banco Dylan.
+
+5. Agrega animaciones suaves en los botones y campos de entrada.
+
+6. Mantén separados los archivos HTML, CSS y JavaScript sin modificar la logica.
